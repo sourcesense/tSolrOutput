@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<COMPONENT>
+    <HEADER AUTHOR="Bilgin Ibryam - Sourcesense" COMPATIBILITY="ALL"
+            DATA_AUTO_PROPAGATE="false" SCHEMA_AUTO_PROPAGATE="true" PLATEFORM="ALL"
+            RELEASE_DATE="20110810A" SERIAL="" STARTABLE="false" STATUS="ALPHA" VERSION="0.1">
+        <SIGNATURE/>
+    </HEADER>
+    <FAMILIES>
+        <FAMILY>Data_Quality</FAMILY>
+    </FAMILIES>
+    <DOCUMENTATION>
+        <URL/>
+    </DOCUMENTATION>
+    <CONNECTORS>
+        <CONNECTOR CTYPE="FLOW" MAX_INPUT="1" MAX_OUTPUT="1" />
+        <CONNECTOR CTYPE="SUBJOB_OK" MAX_OUTPUT="1"/>
+		<CONNECTOR CTYPE="SUBJOB_ERROR" MAX_OUTPUT="1" />
+		<CONNECTOR CTYPE="COMPONENT_OK" />
+		<CONNECTOR CTYPE="COMPONENT_ERROR" />
+		<CONNECTOR CTYPE="RUN_IF" />
+    </CONNECTORS>
+    <PARAMETERS>
+        <PARAMETER NAME="SCHEMA" FIELD="SCHEMA_TYPE" REQUIRED="true" NUM_ROW="10"/>
+        <PARAMETER NAME="SOLR_SERVER_URL" FIELD="TEXT" REQUIRED="true" NUM_ROW="20">
+            <DEFAULT>"http://localhost:8983/solr/"</DEFAULT>
+        </PARAMETER>
+    </PARAMETERS>
+    <ADVANCED_PARAMETERS/>
+    <CODEGENERATION>
+        <IMPORTS>
+            <IMPORT MODULE="apache-solr-solrj-3.3.0.jar" NAME="apache-solr-solrj-3.3.0" REQUIRED="true"/>
+            <IMPORT MODULE="commons-codec-1.4.jar" NAME="commons-codec-1.4" REQUIRED="true"/>
+            <IMPORT MODULE="commons-httpclient-3.1.jar" NAME="commons-httpclient-3.1" REQUIRED="true"/>
+            <IMPORT MODULE="commons-io-1.4.jar" NAME="commons-io-1.4" REQUIRED="true"/>
+            <IMPORT MODULE="jcl-over-slf4j-1.6.1.jar" NAME="jcl-over-slf4j-1.6.1" REQUIRED="true"/>
+            <IMPORT MODULE="slf4j-api-1.6.1.jar" NAME="slf4j-api-1.6.1" REQUIRED="true"/>
+            <IMPORT MODULE="slf4j-jdk14-1.6.1.jar" NAME="slf4j-jdk14-1.6.1" REQUIRED="true"/>
+        </IMPORTS>
+    </CODEGENERATION>
+    <RETURNS>
+        <RETURN AVAILABILITY="AFTER" NAME="NB_LINE" TYPE="id_Integer"/>
+    </RETURNS>
+</COMPONENT>

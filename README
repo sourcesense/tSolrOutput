@@ -1,0 +1,18 @@
+===================================
+
+		* R E A D M E *
+
+===================================
+
+	PURPOSE
+	=======
+	
+		tSolrOutput is a Talend component to be used in Talend Open Studio or Talend Integration Suite in order to index data into Apache Solr.
+		
+		
+	HOW TO USE IT
+	=============
+		- Fill the schema fields mapping to solr index
+		- Specify solr URL
+			
+===================================
